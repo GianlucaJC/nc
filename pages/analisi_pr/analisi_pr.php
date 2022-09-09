@@ -383,8 +383,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- per upload -->
 <script src="../../dist/js/jquery.dm-uploader.min.js"></script>
 <script src="demo-ui.js?ver=1.0"></script>
-<script src="demo-config.js?ver=1.3"></script>
-<script src="analisi_pr.js?ver=1.1"></script>
+<script src="demo-config.js?ver=2.0"></script>
+<script src="analisi_pr.js?ver=2.0"></script>
 
 <!-- fine upload -->
 

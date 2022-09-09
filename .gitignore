@@ -73,8 +73,10 @@ ad.js
 # allegati
 /pages/analisi_mt/allegati/
 /pages/analisi_mt/allegati_ris/
+/pages/analisi_mt/allegati_elimina/
 /pages/analisi_pr/allegati/
 /pages/analisi_pr/allegati_ris/
+/pages/analisi_pr/allegati_elimina/
 /pages/analisi_pr/pdf_rilavorazioni
 /elenconc/rapporti/
 /elenconc/rapporti_mt/

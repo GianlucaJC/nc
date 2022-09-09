@@ -75,6 +75,8 @@ function set_class_allegati(sezione) {
       ui_multi_update_file_progress(id, 100, 'success', false);
 	  if (sezione=="1") $("#btn_refr").show();
 	  if (sezione=="2") $("#btn_refr_ris").show();
+	  if (sezione=="3") $("#btn_refr_elimina").show();
+	  
 
     },
     onUploadError: function(id, xhr, status, message){

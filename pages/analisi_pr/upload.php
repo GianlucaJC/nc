@@ -40,6 +40,7 @@ try {
 
 	$sub="allegati";
 	if ($sezione=="2") $sub="allegati_ris";
+	if ($sezione=="3") $sub="allegati_elimina";
 	@mkdir("$sub/$id_ref");
 	$filepath = "$sub/$id_ref/".$filename;
 

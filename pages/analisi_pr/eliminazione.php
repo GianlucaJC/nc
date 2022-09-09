@@ -31,6 +31,7 @@
 				$dis5="disabled";$out5="secondary";
 			}
 			
+			
 			if ($no_sign==0) {
 				echo "<div class='alert alert-warning' role='alert'>";
 				  echo "Sezione non ancora disponibile!";
@@ -39,7 +40,22 @@
 			
 		?> 
 			<div id='div_seconda_sezione' class='mt-3 container'  style='<?php echo $disp; ?>'>
-				
+
+		<?php 
+			include("view_allegati_elimina.php");
+		?>
+
+				<?php
+				if ($sign_fl==0) {?>
+					<hr>
+					<button type="button" name='btn_allegati_elimina' id='btn_allegati_elimina' class="btn btn-info" data-target="#win_dialog" data-toggle="modal" onclick='set_sezione(3)' ><i class="fas fa-paperclip"></i> Definisci allegati</button>
+					<hr>
+				<?php } ?>
+
+				<a href='javascript:void(0)' onclick='location.reload()'>
+					<button type="button" style='display:none' id='btn_refr_elimina' class="btn btn-warning ml-4"><i class="fas fa-sync"></i> Refresh </button>
+				</a>					
+
 				<form action="<?php echo $action; ?>" method="post" id='frm_ris' name='frm_ris' autocomplete="off" class="needs-validation2" novalidate >
 				
 
@@ -102,6 +118,9 @@
 					
 					</div>		
 				</form>	
+
+
+
 
 				<form action="<?php echo $action; ?>" method="post" id='frm_ris' name='frm_ris' autocomplete="off" class="needs-validation2" novalidate >
 					<div class='row mt-2'>
