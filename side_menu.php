@@ -3,7 +3,7 @@
     <!-- Brand Logo -->
     <a href="<?php echo $path; ?>index.php" class="brand-link">
       <img src="<?php echo $path; ?>dist/img/logo.jpg" alt="Logo NC" class="brand-image img-circle elevation-3" style="opacity: .7">
-      <span class="brand-text font-weight-light">NonConformità</span>
+      <span class="brand-text font-weight-light">NonConformità-</span>
     </a>
 
     <!-- Sidebar -->
