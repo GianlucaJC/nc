@@ -1131,14 +1131,14 @@ if ($operazione=="pdf_lista_mt") {
 	// use the imported page as the template 
 	$pdf->useTemplate($tplIdx, 0, 0); 
 	
-	$y=48.5;
+	$y=52.5;
 	
 	$riga=0;
 	$d1=date("d-m-Y",strtotime($data1));$d2=date("d-m-Y",strtotime($data2));
 	
 	$periodo_ref1="$d1 / $d2";
 	$pdf->SetFont('Times','',9);
-	$pdf->SetXY(49,32.5);
+	$pdf->SetXY(49,33.2);
 	$pdf->Write(0, $periodo_ref1 );
 	
 
