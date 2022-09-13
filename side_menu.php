@@ -140,7 +140,6 @@ ADMIN: può fare tutte le modifiche delle tabelle, eliminare le nc
 		  
 		  
 	  <?php 
-	  echo "nc_access $nc_access ";
 		if ($nc_access=="1" || $nc_access=="3") {?>			
 		  <li class="nav-item">
 			<a href="#" class="nav-link">
