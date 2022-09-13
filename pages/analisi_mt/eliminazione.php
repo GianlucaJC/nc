@@ -45,7 +45,8 @@
 		?>
 
 				<?php
-				if ($sign_fl==0) {?>
+				
+				if (!(($info_nc_mt[0]['sign_eliminazione_mf']!=0 && $info_nc_mt[0]['sign_eliminazione_mv']!=0) || $info_nc_mt[0]['sign_eliminazione_na']!=0)) {?>
 					<hr>
 					<button type="button" name='btn_allegati_elimina' id='btn_allegati_elimina' class="btn btn-info" data-target="#win_dialog" data-toggle="modal" onclick='set_sezione(3)' ><i class="fas fa-paperclip"></i> Definisci allegati</button>
 					<hr>

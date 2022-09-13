@@ -13,7 +13,7 @@
 				}	
 				echo "<div class='col-md-2' id='foto_$fotoref'>";
 					
-					if ($info_nc_pr[0]['firma_valutazione1']==0) {
+					if ($info_nc_mt[0]['sign_eliminazione_mv']==0 || $info_nc_mt[0]['sign_eliminazione_mf']==0) {
 						
 						echo "<a href='javascript:void(0)' onclick=\"delete_foto('$file',$fotoref)\">";
 							echo "<font color='red'><i class='fas fa-trash-alt'></i></font>";
