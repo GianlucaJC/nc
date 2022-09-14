@@ -70,7 +70,7 @@ test.html
 ad.js
 /.cache/
 
-database.php
+/database.php
 /preferenze.ini
 # allegati
 /pages/analisi_mt/allegati/
