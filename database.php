@@ -13,7 +13,7 @@ class Database{
 	private $passwordT='giatongia6971';
 	
 
-	//Liofilchem
+	// Liofilchem
 	/*
 	private $nomehost='192.168.129.30';
 	private $db_name="nc";

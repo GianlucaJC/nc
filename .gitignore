@@ -71,7 +71,7 @@ ad.js
 /.cache/
 
 database.php
-preferenze.ini
+/preferenze.ini
 # allegati
 /pages/analisi_mt/allegati/
 /pages/analisi_mt/allegati_ris/
