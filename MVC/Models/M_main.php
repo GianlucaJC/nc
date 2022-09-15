@@ -541,14 +541,28 @@ class Main_all
 	public function set_utenti($id_u,$service,$team,$txt_mail) {
 		$email=addslashes($email);
 		$resp=array();
-		$sql="UPDATE `nc`.team 
-				SET abilitato=$team, email='$txt_mail' 
+		$sql="SELECT COUNT(id) q 
+				FROM `nc`.team 
 				WHERE id_user=$id_u";
+
+		$result = $this->conn->query($sql);
+		$res = $result->fetch_row();
+		$q=$res[0];
+		
+		if ($q!=0) {
+			$sql="UPDATE `nc`.team 
+					SET abilitato=$team, email='$txt_mail' 
+					WHERE id_user=$id_u";
 			
-		if (!$result = $this->conn->query($sql)) {
-			$resp['header']="KO";$resp['error']=$this->conn->error;
-			return $resp;
+			if (!$result = $this->conn->query($sql)) {
+				$resp['header']="KO";$resp['error']=$this->conn->error;
+				return $resp;
+			}
+		} else {
+			$sql="INSERT INTO `nc`.team (id_user, abilitato, email) VALUES($id_u, $team,'$txt_mail')";
+			$result = $this->conn->query($sql);
 		}
+		
 
 		$sql="UPDATE `Sql58368_4`.`utenti` 
 		SET nc_access=$service
