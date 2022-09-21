@@ -80,7 +80,10 @@
 							<tr>
 								<td><span class='text-primary'><b>Man</b></span></td>
 								<td>
-									<input class="form-control" id='txt_man' name='txt_man' type="text" placeholder="Descrizione" value="<?php echo stripslashes(htmlspecialchars_decode($info_nc_pr[0]['txt_man']));?>" maxlength=300  />
+
+									<textarea class="form-control" id='txt_man' placeholder="Descrizione" name='txt_man' rows="2" cols="50" maxlength=300><?php echo trim($info_nc_pr[0]['txt_man']);?></textarea>
+
+									
 								</td>
 								<td>
 									<select class='form-control' name='man_sn' id='man_sn'>
@@ -99,7 +102,7 @@
 							<tr>
 								<td><span class='text-primary'><b>Method</b></span></td>
 								<td>
-									<input class="form-control" id='txt_method' name='txt_method' type="text" placeholder="Descrizione" value="<?php echo stripslashes(htmlspecialchars_decode($info_nc_pr[0]['txt_method']));?>" maxlength=300  />
+									<textarea class="form-control" id='txt_method' placeholder="Descrizione" name='txt_method' rows="2" cols="50" maxlength=300><?php echo trim($info_nc_pr[0]['txt_method']);?></textarea>
 								</td>
 								<td>
 									<select class='form-control' name='method_sn' id='method_sn'>
@@ -118,7 +121,8 @@
 							<tr>
 								<td><span class='text-primary'><b>Material</b></span></td>
 								<td>
-									<input class="form-control" id='txt_material' name='txt_material' type="text" placeholder="Descrizione" maxlength=300 value="<?php echo stripslashes(htmlspecialchars_decode($info_nc_pr[0]['txt_material']));?>"  />
+									<textarea class="form-control" id='txt_material' placeholder="Descrizione" name='txt_material' rows="2" cols="50" maxlength=300><?php echo trim($info_nc_pr[0]['txt_material']);?></textarea>
+									
 								</td>
 								<td>
 									<select class='form-control' name='material_sn' id='material_sn'>
@@ -137,7 +141,9 @@
 							<tr>
 								<td><span class='text-primary'><b>Machine</b></span></td>
 								<td>
-									<input class="form-control" id='txt_machine' name='txt_machine' type="text" placeholder="Descrizione" maxlength=300 value="<?php echo stripslashes(htmlspecialchars_decode($info_nc_pr[0]['txt_machine']));?>" />
+
+									<textarea class="form-control" id='txt_machine' placeholder="Descrizione" name='txt_machine' rows="2" cols="50" maxlength=300><?php echo trim($info_nc_pr[0]['txt_machine']);?></textarea>									
+									
 								</td>
 								<td>
 									<select class='form-control' name='machine_sn' id='machine_sn'>
@@ -156,7 +162,8 @@
 							<tr>
 								<td><span class='text-primary'><b>Enviroment</b></span></td>
 								<td>
-									<input class="form-control" id='txt_enviroment' name='txt_enviroment' type="text" placeholder="Descrizione" maxlength=300 value="<?php echo stripslashes(htmlspecialchars_decode($info_nc_pr[0]['txt_enviroment']));?>"  />
+
+									<textarea class="form-control" id='txt_enviroment' placeholder="Descrizione" name='txt_enviroment' rows="2" cols="50" maxlength=300><?php echo trim($info_nc_pr[0]['txt_enviroment']);?></textarea>										
 								</td>
 								<td>
 									<select class='form-control' name='enviroment_sn' id='enviroment_sn'>
