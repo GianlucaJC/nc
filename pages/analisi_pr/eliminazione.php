@@ -127,7 +127,7 @@
 					<div class='row mt-2'>
 						<?php
 							$check="";
-							if ($info_nc_pr[0]['eliminato_na']==1) $check="checked";
+							if ($info_nc_pr[0]['eliminato_na']==1 || isset($info_nc_pr[0]['data_eliminazione_na'])) $check="checked";
 						?>			
 						<div class="col-md-4">
 							<div class="form-check">
