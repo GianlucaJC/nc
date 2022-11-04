@@ -84,6 +84,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	background-color: #ffdf7e;
 	color:white;
 }
+div.container_frame { background: transparent; }
+iframe.lockframe { z-index: -2; }
 </style>
 
 
@@ -179,6 +181,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
 					
 				?>				
 				<input type='hidden' name='nc_access' id='nc_access' value='<?php echo $nc_access;?>'>
+				
+				<div class="container_frame" >
+					<iframe class="lockframe" id='frx' src="../insert/new_nc_pr.php?tipo=1&id_ref=<?php echo $id_ref;?>&frame=1" width="100%" height="600px" style='display:none' ><hr></iframe>
+				</div>				
+				
+				<a href="javascript:void(0)" onclick="$('#frx').toggle(150)">
+					Apri/Chiudi Info
+				</a>
+				
 				<div class="accordion-item">
 					<h2 class="accordion-header" id="heading">
 						<!-- onclick="set_sezione(1)" !-->

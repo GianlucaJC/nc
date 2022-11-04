@@ -262,7 +262,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 			
 			
-			<button type="submit" name='btn_ins_nc_mt' id='btn_ins_nc_mt' class="btn btn-primary"><i class="fas fa-save"></i> Salva NC</button>
+			<button type="submit" name='btn_ins_nc' id='btn_ins_nc' class="btn btn-primary"><i class="fas fa-save"></i> Salva NC</button>
+			<input type='hidden' name='btn_ins_nc_mt' id="btn_ins_nc_mt">
 
 		</form>
       </div><!-- /.container-fluid -->
@@ -378,6 +379,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 				  return false;
 		  
 			}
+			$("#btn_ins_nc_mt").val("1")
+			$('#btn_ins_nc').prop('disabled', true );
+			
 			return true;
 		}
         form.classList.add('was-validated');
@@ -392,7 +396,7 @@ $(function(){
 	nc_access=$("#nc_access").val()
 	if (id_ref!="0") {
 		$(".segnalazione").find('select,input,textarea,button').attr("disabled","disabled");
-		$("#btn_ins_nc_mt").hide();
+		$("#btn_ins_nc").hide();
 		$("#a_tipo").hide();
 	}	
 })	

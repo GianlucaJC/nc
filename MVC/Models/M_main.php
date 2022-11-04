@@ -481,6 +481,10 @@ class Main_all
 			$filtro_attivita=$_POST['filtro_attivita'];
 			$cond=" re.attivita='$filtro_attivita' ";
 		}
+		if (isset($_POST['nuove'])) $cond=" re.stato='0' ";
+		if (isset($_POST['visionate'])) $cond=" re.stato='1' ";
+		if (isset($_POST['lavorazione'])) $cond=" re.stato='2' ";
+		if (isset($_POST['concluse'])) $cond=" re.stato='3' ";
 		//
 		
 		

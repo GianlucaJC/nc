@@ -33,6 +33,20 @@ della NC
 	
 	
 ?>	
+	<form action="lista.php" method="post" id='frm_view1' name='frm_view1'>  
+
+		<div class='row' style='clear:right;'>
+			<div class='col-sm-6'>
+				<input type="submit" class="mb-2 btn btn-success" name="nuove" value="Nuove">
+		
+				<input type="submit" class="mb-2 btn btn-success" name='visionate' value="Visionate">
+			
+				<input type="submit" class="mb-2 btn btn-success" name='lavorazione' value="In lavorazione">
+			
+				<input type="submit" class="mb-2 btn btn-success" name='concluse' value="Concluse">
+			</div>	
+		</div>	
+	</form> 
 	<form action="lista.php" method="post" id='frm_view' name='frm_view'>  
 	 <div id='div_filtri' style='<?php echo $vis;?>;clear:right' class='mt-2 mb-2'>
 		<div class='row'>
@@ -250,4 +264,5 @@ della NC
 		</a>	
 		<hr>
 	 </div>
-</form> 
+	 </form>
+

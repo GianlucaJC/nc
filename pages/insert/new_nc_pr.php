@@ -12,12 +12,14 @@ $page_ref="new_nc_pr";
 include_once '../../MVC/Models/M_main.php';
 include_once '../../MVC/Models/M_inser_pr.php';
 include_once '../../MVC/Controllers/C_new_pr.php';
-	
+	if (isset($_GET['ins']) && $_GET['ins']=="1")
 
 if (!isset($_SESSION['user_nc'])) {
 	header("location: ../login/login.php");
 	exit;
 }	
+$frame="";
+if (isset($_GET['frame'])) $frame="1";
 
 ?>
 <!DOCTYPE html>
@@ -115,6 +117,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 		<input type='hidden' name='nc_access' id='nc_access' value='<?php echo $nc_access;?>'>
 		<input type='hidden' name='id_ref' id='id_ref' value='<?php echo $id_ref; ?>'>
+		<input type='hidden' id='frame' value="<?php echo $frame; ?>">
 
 <?php
 
@@ -334,14 +337,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
 						</select>
 						<label for="tipo_nc">Tipologia NC</label>
 						</div>
-						<a onclick="$('#up_tipo').show();" href='../tabelle/tipologie_nc_pr.php' target='_blank' id='a_tipo'>
-							<i class="fas fa-cogs"></i>
-						</a>						
-						<span id='up_tipo' style='display:none;'>
-							<a href='javascript:void(0)' onclick="refresh_tipo()">
-								<font color='red'><i class="ml-3 fas fa-sync-alt"></i></font>
-							</a>
-						</span>	
+						<?php if ($frame!="1") { ?>
+							<a onclick="$('#up_tipo').show();" href='../tabelle/tipologie_nc_pr.php' target='_blank' id='a_tipo'>
+								<i class="fas fa-cogs"></i>
+							</a>						
+							<span id='up_tipo' style='display:none;'>
+								<a href='javascript:void(0)' onclick="refresh_tipo()">
+									<font color='red'><i class="ml-3 fas fa-sync-alt"></i></font>
+								</a>
+							</span>	
+						<?php  } ?>
 				</div>
 				<div class="col-md-9">
 					<div class="form-floating mb-3 mb-md-0">
@@ -354,8 +359,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 			
 			
 			
-			<button type="submit" name='btn_ins_nc_pr' id='btn_ins_nc_pr' class="btn btn-primary"><i class="fas fa-save"></i> Salva NC</button>
-
+			<?php 
+				if ($frame!="1") { ?>
+				<button type="submit" name='btn_ins_nc' id='btn_ins_nc' class="btn btn-primary"><i class="fas fa-save"></i> Salva NC</button>
+				<input type='hidden' name='btn_ins_nc_pr' id='btn_ins_nc_pr'>
+			<?php } ?>	
 		</form>
       </div><!-- /.container-fluid -->
     </div>
@@ -470,6 +478,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 				  return false;
 		  
 			}
+			$("#btn_ins_nc_pr").val("1")
+			$('#btn_ins_nc').prop('disabled', true );
 			return true;
 		}
         form.classList.add('was-validated');
@@ -481,15 +491,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 $(function(){
 	value=$("#attr_sn").val()
+	frame=$("#frame").val()
+	
 	attrsn(value,0)
 	id_ref=$("#id_ref").val()
 	nc_access=$("#nc_access").val()
-	if (nc_access!="1" && id_ref!="0") {
+	if ((nc_access!="1" && id_ref!="0") || frame=="1") {
 		$(".segnalazione").find('select,input,textarea,button').attr("disabled","disabled");
-		$("#btn_ins_nc_pr").hide();
+		$("#btn_ins_nc").hide();
 		$("#a_tipo").hide();
 	}	
 })	
+
+function save_nc() {
+	event.preventDefault();
+	
+	
+	$("#frm_ins").submit();
+}
 
 function set_cod(value) {
 	$("#cod_art").val('')
