@@ -59,7 +59,7 @@
 		$attrezzature=$info_nc_pr[0]['attrezzature'];
 		$reparto_where_nc=$info_nc_pr[0]['reparto_where_nc'];
 		$id_reparto_view=$info_nc_pr[0]['id_reparto_view'];
-		$lista_attrezzature=$main_all->list_attrezzature(0,$id_reparto_view);
+		$lista_attrezzature=$main_all->list_attrezzature(0,$reparto_where_nc);
 		
 		$tipo_prodotto=$info_nc_pr[0]['tipo_prodotto'];
 		$codice=$info_nc_pr[0]['codice'];
