@@ -61,7 +61,8 @@
 
 					<?php
 						$check="";
-						if ($info_nc_mt[0]['eliminato_magazzino_virtuale']==1) $check="checked";
+
+						if ($info_nc_mt[0]['eliminato_magazzino_virtuale']==1 || isset($info_nc_mt[0]['data_eliminazione_mv'])) $check="checked";
 					?>
 					<div class='row mt-2'>
 						<div class="col-md-4">
@@ -94,7 +95,7 @@
 					<div class='row mt-2'>
 						<?php
 							$check="";
-							if ($info_nc_mt[0]['eliminato_magazzino_fisico']==1) $check="checked";
+							if ($info_nc_mt[0]['eliminato_magazzino_fisico']==1 || isset($info_nc_mt[0]['data_eliminazione_mf'])) $check="checked";
 						?>			
 						<div class="col-md-4">
 							<div class="form-check">
@@ -123,7 +124,7 @@
 					<div class='row mt-2'>
 						<?php
 							$check="";
-							if ($info_nc_mt[0]['eliminato_na']==1) $check="checked";
+							if ($info_nc_mt[0]['eliminato_na']==1 || isset($info_nc_mt[0]['data_eliminazione_na'])) $check="checked";
 						?>			
 						<div class="col-md-4">
 							<div class="form-check">
