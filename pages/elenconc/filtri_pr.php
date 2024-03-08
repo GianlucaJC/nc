@@ -33,6 +33,8 @@ della NC
 	
 	
 ?>	
+	
+
 	<form action="lista.php" method="post" id='frm_view1' name='frm_view1'>  
 
 		<div class='row' style='clear:right;'>
@@ -47,7 +49,27 @@ della NC
 			</div>	
 		</div>	
 	</form> 
-	<form action="lista.php" method="post" id='frm_view' name='frm_view'>  
+	<form action="lista.php" method="post" id='frm_view2' name='frm_view2'>  
+		<div id='div_prot' style='display:none;clear:right' class='mt-2 mb-2'>
+			Anno di riferimento 
+			<select class="form-control" name="anno_prot" style='width:200px'>
+			   <?php
+			   for ($year=(int)date('Y');$year>=2022; $year--): ?>
+				 <option value="<?=$year;?>"><?=$year;?></option>
+			   <?php endfor; ?>
+			</select> 
+			<input type="submit" class="mt-2 mb-2 btn btn-primary" name="write_prot" value="Riscrivi protocolli">
+			<input type="submit" class="mt-2 mb-2 btn btn-info" name="write_prot_test" value="Test riscrivi protocolli">
+
+		</div>
+	</form> 
+	
+
+	<form action="lista.php" method="post" id='frm_view' name='frm_view'>
+	
+
+
+	
 	 <div id='div_filtri' style='<?php echo $vis;?>;clear:right' class='mt-2 mb-2'>
 		<div class='row'>
 			<div class='col-sm-6'>

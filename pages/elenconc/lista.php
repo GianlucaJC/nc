@@ -133,15 +133,34 @@ scratch. This page gets rid of all links and provides the needed markup only.
 				<a href="javascript:void(0)" class="navbar-brand"><i class="fas fa-clipboard-list"></i> Lista NC Prodotti</a>
 				</center>
 			  </div>
-			 
-			 
+
+
+
             <div class="card">
-				
 				  <div class="card-body">
-				  
-				  <?php
-				  if ($nc_access!="2") {?>
+					<?php
+						if (strlen($write)!=0 && $write!="OK") {?>
+						<div id='check_prot' class='container mb-5' style='width:30%'>	
+							<div id='div_view_new_prot' class='mb-2' style='height:300px;overflow-y: scroll;'>
+							<?php
+								echo $write;
+							?>	
+							</div>
+							<button type="button" class="btn btn-primary" onclick="$('#check_prot').hide(150)">Chiudi</button>
+						</div>
+					<?php
+						}
+					if ($write=="OK") {
+						echo "<div class='alert alert-success' role='alert'>
+						  Protocolli aggiornati con successo!
+						</div>";				
+					}	
+					
+					if ($nc_access!="2") {?>
 					<div  style='float:right'>
+
+					  <button type="button" class="mb-2 btn btn-info" onclick="$('#div_prot').toggle()">Protocolli</button>
+
 					  
 					  <button type="button" class="mb-2 btn btn-primary" onclick="$('#div_filtri').toggle()">Filtri</button>
 

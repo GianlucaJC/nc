@@ -58,6 +58,44 @@ class Main_all
 		return $rows;		
 	}
 
+	function write_prot($tipo,$anno,$test) {
+		$sql="SELECT id,protocollo_nc FROM `nc`.`nc_prodotto` nc WHERE substr(data_nc,1,4)='$anno' and dele=0";
+		
+		$result=$this->conn->query($sql);	
+		$resp=array();
+		$pro=0;
+		$str="<ul class='list-group'>";
+		while($results = $result->fetch_assoc()){
+			$pro++;
+			if (strlen($pro)==1) $prot="000$pro";
+			elseif (strlen($pro)==2) $prot="00$pro";
+			elseif (strlen($pro)==3) $prot="0$pro";
+			else $prot="$pro";
+			$prot=$tipo.$prot;
+			$prot.="/".$anno;
+			$id=$results['id'];
+			
+			if ($test==false) {
+				$sql="UPDATE `nc`.`nc_prodotto`
+						SET protocollo_nc='$prot'
+						WHERE id=$id";
+				$this->conn->query($sql);
+			}
+			
+			$protocollo_nc=$results['protocollo_nc'];
+			$stile="primary";
+			if ($protocollo_nc!=$prot) $stile="warning";
+			$str.="<li class='list-group-item d-flex justify-content-between align-items-center'>
+				$protocollo_nc
+				<span class='badge badge-$stile badge-pill'>$prot</span>
+			</li>";
+		}
+		$str.="</ul>";
+		if ($test==true) return $str;
+		else return "OK";
+
+	}
+
 	function array_utenti() {
 		$sql="SELECT id,nome signer FROM `Sql58368_4`.`utenti`";
 		$result=$this->conn->query($sql);	

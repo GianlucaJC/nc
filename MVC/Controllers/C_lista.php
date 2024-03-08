@@ -44,7 +44,12 @@
 	if (isset($_POST['filtro_classificazioni'])) $filtro_classificazioni=$_POST['filtro_classificazioni'];
 	if (isset($_POST['filtro_tipo_prodotti'])) $filtro_tipo_prodotti=$_POST['filtro_tipo_prodotti'];
 	if (isset($_POST['filtro_attivita'])) $filtro_attivita=$_POST['filtro_attivita'];
-	
+	$write="";
+	if (isset($_POST['write_prot']) || isset($_POST['write_prot_test'])) {
+		$test=false;
+		if (isset($_POST['write_prot_test'])) $test=true;
+		$write=$main_all->write_prot("P",$_POST['anno_prot'],$test);
+	}
 	
 	$elenco_nc=$main_all->lista_nc(1,$periodo_ref,$nc);
 	$array_utenti=$main_all->array_utenti();
