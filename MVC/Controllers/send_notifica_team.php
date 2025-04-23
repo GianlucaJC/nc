@@ -13,7 +13,7 @@
 		$mail->Host = 'smtp.gmail.com';
 		$mail->SMTPAuth = true;
 		$mail->Username = "smtp@liofilchem.com";
-		$mail->Password = "oSeaLeonel";
+		$mail->Password = "vqyf ximb mxvw wwuy";
 		$mail->SMTPSecure = "tls";
 		$mail->Port = 587;
 

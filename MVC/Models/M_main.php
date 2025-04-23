@@ -58,8 +58,10 @@ class Main_all
 		return $rows;		
 	}
 
-	function write_prot($tipo,$anno,$test) {
-		$sql="SELECT id,protocollo_nc FROM `nc`.`nc_prodotto` nc WHERE substr(data_nc,1,4)='$anno' and dele=0";
+function write_prot($tipo,$anno,$test) {
+		$tb="nc_prodotto";
+		if ($tipo=="M") $tb="nc_materiale";
+		$sql="SELECT id,protocollo_nc FROM `nc`.$tb nc WHERE substr(data_nc,1,4)='$anno' and dele=0";
 		
 		$result=$this->conn->query($sql);	
 		$resp=array();
@@ -75,8 +77,9 @@ class Main_all
 			$prot.="/".$anno;
 			$id=$results['id'];
 			
+
 			if ($test==false) {
-				$sql="UPDATE `nc`.`nc_prodotto`
+				$sql="UPDATE `nc`.$tb
 						SET protocollo_nc='$prot'
 						WHERE id=$id";
 				$this->conn->query($sql);

@@ -28,6 +28,13 @@
 		$periodo_ref="$y$m";
 	}
 	
+	$write="";
+	if (isset($_POST['write_prot']) || isset($_POST['write_prot_test'])) {
+		$test=false;
+		if (isset($_POST['write_prot_test'])) $test=true;
+		$write=$main_all->write_prot("M",$_POST['anno_prot'],$test);
+	}	
+	
 	$nc=0;
 	if (isset($_GET['nc_mt'])) $nc=$_GET['nc_mt'];
 	$elenco_nc=$main_all->lista_nc(2,$periodo_ref,$nc);
