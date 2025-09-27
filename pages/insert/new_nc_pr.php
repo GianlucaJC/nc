@@ -448,7 +448,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <script>
 (function() {
-  'use strict';
+  //'use strict';
   window.addEventListener('load', function() {
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     var forms = document.getElementsByClassName('needs-validation');
@@ -456,6 +456,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     var validation = Array.prototype.filter.call(forms, function(form) {
       form.addEventListener('submit', function(event) {
         if (form.checkValidity() === false) {
+
 		  event.preventDefault();
 		  event.stopPropagation();
 
@@ -463,6 +464,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	   	  html="<p><b>Attenzione</b><br>Per poter avanzare è necessario controllare tutti i campi evidenziati in rosso</p>";
 		  $("#body_dialog").html(html)
 		  $('#win_dialog').modal('show')
+		  
 		  
         } else {
 			cod_art=$("#cod_art").val()
